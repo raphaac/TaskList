@@ -11,21 +11,4 @@ const ConcluirTarefas = (state, payload) => {
   });
 };
 
-// const AlterarTarefas = (state, payload) => {
-//   console.log(payload);
-//   state.Tarefas.forEach(tar => {
-//     console.log(tar);
-//     if (tar.id === payload.id) {
-//       tar.titulo = payload.titulo;
-//     }
-//   });
-// };
-
-// const addTarefa = (state, payload) => {
-//   state.Tarefa.push({ ...payload });
-// };
-// const removeTarefa = (state, index) => {
-//   state.Tarefa.splice(index, 1);
-// };
-
 export { CarregaTarefas, ConcluirTarefas };
