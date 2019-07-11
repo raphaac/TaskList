@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Vue.js App</title>
+  </head>
+  <style>
+    .negative {
+      color: brown;
+    }
+    .positive {
+      color: darkgreen;
+    }
+  </style>
+  <body>
+    <div id="app">
+      <table>
+        <tr v-for="person in people">
+          <td>{{ person.id }}</td>
+          <td>{{ person.first_name }}</td>
+          <td>{{ person.last_name }}</td>
+          <td>{{ person.email }}</td>
+          <!-- <td>{{ person.isActive ? "Active" : "Inactive" }}</td> -->
+          <td>
+            <span class="positive" v-if="person.isActive">Active</span>
+            <span class="negative" v-else>Inactive</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script type="text/javascript">
+      const app = new Vue({
+        el: "#app",
+
+        data: {
+          people: [
+            {
+              id: 1,
+              first_name: "Moshe",
+              last_name: "Beachem",
+              email: "mbeachem0@marketwatch.com",
+              isActive: true
+            },
+            {
+              id: 2,
+              first_name: "Kent",
+              last_name: "Dewan",
+              email: "kdewan1@amazon.co.uk",
+              isActive: false
+            },
+            {
+              id: 3,
+              first_name: "Caprice",
+              last_name: "Huygen",
+              email: "chuygen2@g.co",
+              isActive: false
+            },
+            {
+              id: 4,
+              first_name: "Florrie",
+              last_name: "Osgerby",
+              email: "fosgerby3@macromedia.com",
+              isActive: false
+            },
+            {
+              id: 5,
+              first_name: "Moritz",
+              last_name: "Van Arsdale",
+              email: "mvanarsdale4@mit.edu",
+              isActive: true
+            },
+            {
+              id: 6,
+              first_name: "Fletcher",
+              last_name: "Mompesson",
+              email: "fmompesson5@twitter.com",
+              isActive: true
+            },
+            {
+              id: 7,
+              first_name: "Baudoin",
+              last_name: "Simondson",
+              email: "bsimondson6@techcrunch.com",
+              isActive: false
+            },
+            {
+              id: 8,
+              first_name: "Galen",
+              last_name: "Ocklin",
+              email: "gocklin7@epa.gov",
+              isActive: false
+            },
+            {
+              id: 9,
+              first_name: "Aggi",
+              last_name: "Baynes",
+              email: "abaynes8@wikimedia.org",
+              isActive: true
+            },
+            {
+              id: 10,
+              first_name: "Gwenette",
+              last_name: "Laycock",
+              email: "glaycock9@tumblr.com",
+              isActive: false
+            }
+          ]
+        }
+      });
+    </script>
+  </body>
+</html>
