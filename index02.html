@@ -1,55 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <title>Vue.js App</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <div id="app">
-      <button @click="trocaImagem()">Trocar Imagem</button>
-      <button @click="proxImagem()">Próxima Imagem</button>
-      <button @click="antImagem()">Anterior Imagem</button>
-      <br />
-      <br />
-      <img :src="exibeImage" />
+        <button @click="trocaImagem()">Trocar Imagem</button>
+        <button @click="proxImagem()">Próxima Imagem</button>
+        <button @click="antImagem()">Anterior Imagem</button>
+        <br />
+        <br />
+        <img :src="exibeImage" />
     </div>
     <script src="https://unpkg.com/vue"></script>
     <script type="text/javascript">
-      const app = new Vue({
-        el: "#app",
-
-        data: {
-          arrayImagems: [
-            "http://via.placeholder.com/350x150",
-            "http://via.placeholder.com/200x100",
-            "http://via.placeholder.com/140x100"
-          ],
-          imageSource: "http://via.placeholder.com/350x150",
-          nrImg: 0
-        },
-        computed: {
-          exibeImage() {
-            return this.imageSource;
-          }
-        },
-        methods: {
-          trocaImagem() {
-            this.nrImg = Math.floor(Math.random() * 3);
-            this.imageSource = this.arrayImagems[this.nrImg];
-          },
-          proxImagem() {
-            this.nrImg += 1;
-            if (this.nrImg == 3) this.nrImg = 0;
-            this.imageSource = this.arrayImagems[this.nrImg];
-          },
-          antImagem() {
-            this.nrImg -= 1;
-            if (this.nrImg == -1) this.nrImg = 2;
-            this.imageSource = this.arrayImagems[this.nrImg];
-          }
-        }
-      });
+        const app = new Vue({
+            el: "#app",
+            // teste02 do marcos paulo
+            data: {
+                arrayImagems: [
+                    "http://via.placeholder.com/350x150",
+                    "http://via.placeholder.com/200x100",
+                    "http://via.placeholder.com/140x100"
+                ],
+                imageSource: "http://via.placeholder.com/350x150",
+                nrImg: 0
+            },
+            computed: {
+                exibeImage() {
+                    return this.imageSource;
+                }
+            },
+            methods: {
+                trocaImagem() {
+                    this.nrImg = Math.floor(Math.random() * 3);
+                    this.imageSource = this.arrayImagems[this.nrImg];
+                },
+                proxImagem() {
+                    this.nrImg += 1;
+                    if (this.nrImg == 3) this.nrImg = 0;
+                    this.imageSource = this.arrayImagems[this.nrImg];
+                },
+                antImagem() {
+                    this.nrImg -= 1;
+                    if (this.nrImg == -1) this.nrImg = 2;
+                    this.imageSource = this.arrayImagems[this.nrImg];
+                }
+            }
+        });
     </script>
-  </body>
+</body>
+
 </html>
